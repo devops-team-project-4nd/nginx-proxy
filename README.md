@@ -2,7 +2,7 @@
 
 
 ## STEP 1 
-Nginx Pull </br>
+### Nginx Pull
 https://hub.docker.com/_/nginx
 ```
 $ docker pull nginx
@@ -57,5 +57,6 @@ ipv4 수신 대기:             ipv4에 연결:
 0.0.0.0         9090        172.18.143.34   9090
 ```
 
-## Network Fowarding Test
+## STEP 6
+### Network Fowarding Test
 <img src="https://github.com/devops-team-project-4nd/nginx-proxy/assets/91647614/c52c44e7-38cf-4d7b-ae41-14d9ac3820ab" style="width:70%;">
