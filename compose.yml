@@ -2,7 +2,7 @@ version: '3.8'
 name: awsgoo
 services:
   nginx-proxy:
-    image: nginxproxy/nginx-proxy # https://github.com/nginx-proxy/nginx-proxy
+    image: nginxproxy/nginx-proxy
     ports:
       - "9889:80"
     volumes:
@@ -12,8 +12,24 @@ services:
     deploy:
       resources:
         limits:
-          cpus: '0.50'
-          memory: 100M
+          cpus: '0.10'
+          memory: 50M
         reservations:
-          cpus: '0.20'
-          memory: 100M
+          cpus: '0.05'
+          memory: 20M
+
+  blog:
+    # build: server-a/
+    image: hyunsungjoo/compose:0.1.0
+    deploy:
+      mode: replicated
+      replicas: 1
+      resources:
+        limits:
+          cpus: '0.05'
+          memory: 50M
+        reservations:
+          cpus: '0.01'
+          memory: 20M
+    expose:
+      - "80"
